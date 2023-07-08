@@ -1,0 +1,22 @@
+{
+    "manifest_version": 2,
+    "name": "YouTube Downloader",
+    "version": "1.0",
+    "description": "Download YouTube videos as MP3/MP4",
+    "permissions": ["activeTab"],
+    "browser_action": {
+      "default_popup": "popup.html"
+    },
+    "icons": {
+      "16": "icon16.png",
+      "48": "icon48.png",
+      "128": "icon128.png"
+    },
+    "content_scripts": [
+      {
+        "matches": ["*://www.youtube.com/watch?v=*"],
+        "js": ["content.js"]
+      }
+    ]
+  }
+  
