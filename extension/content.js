@@ -3,6 +3,8 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
         var videoUrl = window.location.href;
         var requestData = { video_url: videoUrl };
         fetch('http://localhost:5000/download', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(requestData)
         })
         .then(function(response) {
@@ -10,7 +12,7 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
         })
         .then(function(data) {
             console.log(data)
-            console.log(response.status)
+            console.log(error.response.status)
         })
     }
 });
