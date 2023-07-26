@@ -32,3 +32,5 @@ def download_video(videourl, path):
         dl_vid.download(SAVE_PATH)
     except:
         print("Error downloading the video.")
+
+    print(videourl.json())
